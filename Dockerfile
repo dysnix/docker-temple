@@ -6,7 +6,7 @@ ENV \
 
 RUN \
   ## install tools \
-  apk add --no-cache coreutils sed bash curl && \
+  apk add --no-cache coreutils sed bash curl jq && \
   ## install temple \
   curl -o /usr/local/bin/temple -sSL https://github.com/docwhat/temple/releases/download/${TEMPLE_VERSION}/temple_linux_amd64 && \
   cd /usr/local/bin && printf "${TEMPLE_SHA256}  temple" | sha256sum -c && chmod 755 temple && \
